@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscribe</title>
+</head>
+<body>
+{% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+{% if success %}
+  <p><strong>Done!</strong></p>
+{% endif %}
+
+<form action="{% url 'subscribe:subscribe' subscriber.token %}" method="post">
+  {% csrf_token %}
+
+  {% for tag in tags %}
+    <input
+        type="checkbox"
+        name="{{ tag.id }}"
+        value="{{ tag.id }}"
+        id="tag{{ forloop.counter }}"
+        {% if tag in subscribed_tags %}
+        checked
+        {% endif %}
+    >
+    <label for="tag{{ forloop.counter }}">{{ tag.name }}</label><br>
+  {% endfor %}
+
+  <input type="submit" value="Save"/>
+</form>
+</body>
+</html>

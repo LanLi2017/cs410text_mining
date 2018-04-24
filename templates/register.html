@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+</head>
+<body>
+{% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+{% if subscriber %}
+  <p><strong>Done!</strong></p>
+  <p>Click <a href="{{ subscriber.subscribe_page_url }}">here</a> to set your subscribe.</p>
+{% endif %}
+
+<form action="{% url 'subscribe:register' %}" method="post">
+  {% csrf_token %}
+
+  <label for="nickname">Nickname</label>
+  <input type="text" name="nickname" id="nickname" value="{{ nickname }}" required/>
+  <br/>
+
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" value="{{ email }}" required/>
+  <br/>
+
+  <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
