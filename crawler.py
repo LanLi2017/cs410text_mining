@@ -1,10 +1,10 @@
-import urllib
+
 import urllib.request
-import re
 from bs4 import BeautifulSoup
 theurl='http://calendars.illinois.edu/week/7'
 thepage=urllib.request.urlopen(theurl)
 soup=BeautifulSoup(thepage,'html.parser')
+# currenteventsoup=soup.find('div', id="ws-calendar-content")
 links=soup.find_all('a',href=True)
 eventlinks=[]
 allevents={}
@@ -50,6 +50,20 @@ for link in links:
             else:
                 event['Description'] = eventdescriptionsoup.text
             allevents[title]=event
-            print(title)
 for i in allevents.items():
     print(i)
+# print(allevents)
+
+# typecount={}
+# destype={}
+# for i in allevents.keys():
+#     print(allevents[i])
+#     destype[allevents[i]['Description']]=allevents[i]['Type']
+# #     typee=allevents[i]["Type"]
+# #     if typee not in typecount.keys():
+# #         typecount[typee]=1
+# #     else:
+# #         typecount[typee]+=1
+# # for i in typecount:
+# #     print(i)
+# print(destype)
