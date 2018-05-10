@@ -1,9 +1,8 @@
-import csv
-
 from django.contrib import admin
 from django.http import HttpResponse
 
 from subscribe.models import Tag, Subscriber
+from subscribe.utils import dump_data
 
 
 @admin.register(Tag)
@@ -29,22 +28,7 @@ def dump_subscribers_to_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="data.csv"'
 
-    writer = csv.writer(response)
-    writer.writerow([
-        'nickname',
-        'email',
-        'subscribe_page_url',
-        'create_date',
-        'subscribed_tags',
-    ])
-
-    for subscriber in queryset.all():
-        writer.writerow([
-            subscriber.nickname,
-            subscriber.email,
-            subscriber.subscribe_page_url(),
-            subscriber.create_date,
-        ] + list(subscriber.subscribed_tags.all()))
+    dump_data(response, queryset)
 
     return response
 
