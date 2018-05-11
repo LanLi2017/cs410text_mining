@@ -25,6 +25,7 @@ Here we set twelve types events for users choosing: Ceremony/Service, Conference
 
 3)	 Send recommending events to users according to the tags selected.
 
+![results](https://github.com/LanLi2017/cs410text_mining/blob/master/results.png)
 Our system will automatically update the events information by crawling the new events from the relevant website once a week, then we will utilize this new events information and the exist events information to train our classification model. By applying this model, we will acquire new tag information (more accurate than initial classification). At last, we will send the respect events information to the specific users by their subscription.  
 
 # 3.	Documentation of the usage of the software including either documentation of usages of APIs or detailed instructions on how to install and run a software, whichever is applicable.
