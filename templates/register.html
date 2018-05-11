@@ -64,15 +64,15 @@
 <form class="form-signin" action="{% url 'subscribe:register' %}" method="post">
   {% csrf_token %}
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="nickname" class="sr-only">Nickname</label>
-  <input type="text" name="nickname" id="nickname" class="form-control" value="{{ nickname }}" required/>
+  <label for="nickname" class="sr-only" >Nickname</label>
+  <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" value="{{ nickname }}" required/>
   <br/>
 
   <label for="email" class="sr-only">Email</label>
-  <input type="email" name="email" id="email" class="form-control" value="{{ email }}" required/>
+  <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ email }}" required/>
   <br/>
 
-  <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="/connector.html">Sign in</button>
 </form>
 </body>
 </html>
