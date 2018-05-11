@@ -15,12 +15,15 @@ The third part is the recommending part, this step is used to verify the accurac
 1)	Sign in interface
  
 Users can set their own nickname, and input their email for receiving the recommending events later.
-2)	 Click and redirect to choose tags which users are interested in. 
+
+2)	Click and redirect to choose tags which users are interested in. 
  
 Here we set twelve types events for users choosing: Ceremony/Service, Conference/Workshop, Exhibition, Festival/Celebration, Health/Fitness, Informational, Lecture, Meeting, Performance, Reception/Open House, Seminar/Symposium, and Social/Informal Event. 
 
 3)	 Send recommending events to users according to the tags selected.
+
 Our system will automatically update the events information by crawling the new events from the relevant website once a week, then we will utilize this new events information and the exist events information to train our classification model. By applying this model, we will acquire new tag information (more accurate than initial classification). At last, we will send the respect events information to the specific users by their subscription.  
+
 # 3.	Documentation of the usage of the software including either documentation of usages of APIs or detailed instructions on how to install and run a software, whichever is applicable.
 
 1)	1Get the latest official version of the Django:
