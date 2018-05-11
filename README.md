@@ -13,11 +13,14 @@ The third part is the recommending part, this step is used to verify the accurac
 # 2.	Documentation of how the software is implemented with sufficient detail so that others can have a basic understanding of your code for future extension or any further improvement.
 
 1)	Sign in interface
+
+![sign_in](https://github.com/LanLi2017/cs410text_mining/blob/master/Signin.png)
  
 Users can set their own nickname, and input their email for receiving the recommending events later.
 
 2)	Click and redirect to choose tags which users are interested in. 
  
+![tags](https://github.com/LanLi2017/cs410text_mining/blob/master/tags.png)
 Here we set twelve types events for users choosing: Ceremony/Service, Conference/Workshop, Exhibition, Festival/Celebration, Health/Fitness, Informational, Lecture, Meeting, Performance, Reception/Open House, Seminar/Symposium, and Social/Informal Event. 
 
 3)	 Send recommending events to users according to the tags selected.
