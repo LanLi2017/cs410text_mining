@@ -46,7 +46,6 @@ $ pip install BeautifulSoup
 Used BeautifulSoup to crawl all the events from UIUC calendar. Trained a text classification model using KNN method to tag the events for future recommendation.
 
 2.	Jiajun Chen
-
 Used Django-Crontab to implement the automatically email sending function.  Sorted out the data processing progress and connected the crawler with KNN.
 
 3.	Lan Li
